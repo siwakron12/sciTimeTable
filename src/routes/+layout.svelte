@@ -3,9 +3,12 @@
 	import Nav from "$lib/MyLayout/Nav.svelte";
 	import SideBar from "$lib/MyLayout/SideBar.svelte";
 	import CourseFormDrawer from "$lib/compornent/CourseFormDrawer.svelte";
+	import CourseFormExcelDrawer from "$lib/compornent/CourseExcelDrawer.svelte";
 	import "./app.css";
 
 	import { openCourseForm } from "$lib/stores/courseForm";
+	// import { openCourseExcelForm} from "$lib/stores/courseExcelForm";
+  import CourseExcelDrawer from "$lib/compornent/CourseExcelDrawer.svelte";
 
 	let { children } = $props();
 </script>
@@ -26,4 +29,5 @@
 	</div>
 
 	<CourseFormDrawer />
+	<CourseExcelDrawer />
 </div>

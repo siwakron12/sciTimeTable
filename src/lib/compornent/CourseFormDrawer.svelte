@@ -1,7 +1,7 @@
 <script>
   import { openCourseForm } from "$lib/stores/courseForm";
   import { fly, fade } from "svelte/transition";
-  import  From  from "./From.svelte"
+  import  Form  from "./Form.svelte"
 
   const close = () => openCourseForm.set(false);
 </script>
@@ -39,7 +39,7 @@
           </svg>
         </button>
       </div>
-      <From/>
+      <Form/>
      
     </div>
   </div>
