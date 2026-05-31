@@ -1,4 +1,6 @@
 <script>
+  import { Eraser } from "@lucide/svelte";
+
     export let search = "";
     export let placeholder = "ค้นหา...";
 </script>
@@ -26,11 +28,17 @@
             class="w-full bg-transparent outline-none p-2"
         />
     </div>
-
-    <button
-        class="px-12 py-2 bg-black text-white rounded-2xl"
+ 
+ <div> 
+    
+        <button
+        class="px-12 flex items-center   py-2 bg-black text-white rounded-2xl cursor-pointer"
         on:click={() => (search = "")}
     >
-        ล้าง
+        <Eraser size={20} />
+        <span class="ml-2">ล้าง</span>
+     
     </button>
+ </div>     
+
 </div>

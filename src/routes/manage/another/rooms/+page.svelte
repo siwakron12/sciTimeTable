@@ -14,7 +14,7 @@
     let loading = false;
     let HaveLoad = true;
     const columns = [
-        { key: "name", label: "ชื่อห้อง (อังกฤษ)" },
+        { key: "name", label: "ชื่อห้อง " },
         { key: "type", label: "ประเภท" },
         { key: "capacity", label: "ความจุ" },
         { key: "building_Name", label: "ตึก" },
@@ -44,7 +44,7 @@
         try {
             const q = encodeURIComponent(search.trim());
             const url = search
-                ? `${PUBLIC_API_URL}/api/rooms/search?q=${q}&limit=10&page=${page}`
+                ? `${PUBLIC_API_URL}/api/rooms/search?q=${q}&limit=20&page=${page}`
                 : `${PUBLIC_API_URL}/api/rooms?limit=10&page=${page}`;
 
             const res = await fetch(url);
@@ -77,7 +77,7 @@
             const dep = Build.find((d: any) => d.id === prog.building_id);
             return {
                 ...prog,
-                building_Name: dep ? dep.name : "-",
+                building_Name: dep ? dep.name_th : "-",
             };
         });
     }
@@ -139,9 +139,9 @@
     <PostModel onClose={closePopup} reLoad={loadProgram} />
 {/if}
 <div class="flex items-center space-x-2 mb-4">
-    <SearchInput bind:search placeholder="ค้นหาหลักสูตร..." />
+    <SearchInput bind:search placeholder="ค้นหาห้อง..." />
     <button
-        class="bg-green-500 px-12 py-2 text-white rounded-2xl whitespace-nowrap"
+        class="bg-green-500 px-12 py-2 cursor-pointer text-white rounded-2xl whitespace-nowrap"
         on:click={openPopup}
     >
         เพิ่มข้อมูล

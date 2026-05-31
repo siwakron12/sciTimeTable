@@ -51,7 +51,7 @@
         const payload = {
             name: name_th,
             capacity: Number(capacity) <= 0 ? 0 : Number(capacity),
-            building_id: Number(department_id),
+            building_id: String(department_id),
             type: type,
         };
 
@@ -125,7 +125,7 @@
                 >
                     <option value="">-- เลือกตึก --</option>
                     {#each Depart as dep}
-                        <option value={dep.id}>{dep.name}</option>
+                        <option value={dep.id}>{dep.name_th}</option>
                     {/each}
                 </select>
             </div>

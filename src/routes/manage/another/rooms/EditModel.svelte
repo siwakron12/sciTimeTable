@@ -48,10 +48,10 @@
         const payload = {
             name: name_th,
             type,
-            building_id: Number(department_id),
+            building_id: String(department_id),
             capacity: Number(capacity) <= 0 ? 0 : Number(capacity),
         };
-
+        console.log("🚀 ~ file: EditModel.svelte:93 ~ submit ~ payload:", payload);
         try {
             const res = await fetch(`${PUBLIC_API_URL}/api/rooms/${data.id}`, {
                 method: "PUT",
@@ -115,7 +115,7 @@
                 >
                     <option value="">-- เลือกตึก --</option>
                     {#each Depart as dep}
-                        <option value={dep.id}>{dep.name}</option>
+                        <option value={dep.id}>{dep.name_th}</option>
                     {/each}
                 </select>
             </div>

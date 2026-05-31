@@ -30,7 +30,7 @@
 </script>
 
 <div on:click={onClose} class="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-  <div  on:click|stopPropagation class="bg-white rounded p-6 w-96 relative">
+  <div  on:click|stopPropagation class="bg-[#FDEFE2]  rounded p-6 w-96 relative">
     <h2 class="text-xl font-semibold mb-4">แก้ไขภาควิชา</h2>
 
     <label class="block mb-2">ชื่อภาควิชา (TH)</label>
@@ -47,13 +47,14 @@
       bind:value={editData.name_en}
     />
 
-    <div class="flex justify-end gap-2">
+    <div class="flex justify-center gap-4 mt-4">
+     <button class="px-3 py-1 bg-orange-500 text-white rounded" on:click={submit}
+        >บันทึก</button
+      >
       <button class="px-3 py-1 bg-gray-300 rounded" on:click={onClose}
         >ยกเลิก</button
       >
-      <button class="px-3 py-1 bg-blue-500 text-white rounded" on:click={submit}
-        >บันทึก</button
-      >
+     
     </div>
   </div>
 </div>
